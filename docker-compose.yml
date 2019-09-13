@@ -1,0 +1,24 @@
+version: '3'
+services:
+  nginx:
+    image: nginx
+    restart: always
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      
+  mongo:
+    image: mongo
+    restart: always
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+
+  yapi:
+    container_name: yapi
+    build: ./yapi
+    restart: always
+    depends_on:
+      - mongo
