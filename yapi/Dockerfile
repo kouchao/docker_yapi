@@ -9,4 +9,4 @@ RUN npm install --production --registry https://registry.npm.taobao.org
 EXPOSE 3000
 
 # CMD ["pm2-runtime", "start", "pm2.json", "--web"]
-CMD npm run install-server && pm2-runtime start pm2.json --web
+CMD npm run install-server && pm2-runtime start pm2.json
